@@ -28,6 +28,7 @@ class ChatController extends Controller
         $newMsg->chat_room_id = $arg_room_id;
         $newMsg->message = $req->message;
         $newMsg->save();
+        // echo 'newMsg: ' . $newMsg . PHP_EOL;
         broadcast(new NewChatMessage($newMsg))->toOthers();
         return $newMsg;
     }

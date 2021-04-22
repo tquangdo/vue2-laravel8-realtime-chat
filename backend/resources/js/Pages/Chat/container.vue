@@ -57,15 +57,13 @@ export default {
     onConnect() {
       if (this.v_currentRoom.id) {
         let vm = this;
-        console.log("~~~~ 1 @@@@@@@@@@");
         this.onGetMessages();
-        console.log("~~~~ 2 @@@@@@@@@@");
+        // window.Echo.private('channelName').listen('.EventName',function(e){})
         window.Echo.private("chat." + this.v_currentRoom.id).listen(
           ".message.new",
           (e) => {
-            console.log("~~~~ 3 @@@@@@@@@@");
             vm.onGetMessages();
-            console.log("~~~~ 4 @@@@@@@@@@");
+            console.log("~~~~ SE KO XUAT HIEN DONG NAY TREN CONSOLE!!!");
           }
         );
       }

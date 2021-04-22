@@ -16,11 +16,13 @@
 ## Run
 
 - access on browser: `http://localhost`
+![demo](screenshot\demo.png)
 
 ## MVC
 
 - `php artisan make:model ChatRoom/ChatMessage -m`
 - `php artisan migrate`
+![demo](screenshot\db.png)
 - `php artisan make:seeder ChatRoomSeeder`
 - `php artisan db:seed`
 - `php artisan make:controller ChatController`
@@ -30,3 +32,7 @@
 - `composer require pusher/pusher-php-server "~4.0"`
 - `backend % npm i --save laravel-echo pusher-js`
 - `php artisan event:generate`
+>clear cache
+- `php artisan optimize`
+- `php artisan queue:work`
+![demo](screenshot\pusher.png)
