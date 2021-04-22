@@ -4,6 +4,7 @@
 ![Stars](https://img.shields.io/github/stars/tquangdo/vue2-laravel8-realtime-chat?color=f05340)
 ![Issues](https://img.shields.io/github/issues/tquangdo/vue2-laravel8-realtime-chat?color=f05340)
 ![Forks](https://img.shields.io/github/forks/tquangdo/vue2-laravel8-realtime-chat?color=f05340)
+[![Report an issue](https://img.shields.io/badge/Support-Issues-green)](https://github.com/tquangdo/vue2-laravel8-realtime-chat/issues/new)
 
 ## Introduction
 
