@@ -16,7 +16,7 @@
 ## Run
 
 - access on browser: `http://localhost`
-![demo](screenshot\demo.png)
+![demo](screenshot/demo.png)
 
 ## MVC
 
