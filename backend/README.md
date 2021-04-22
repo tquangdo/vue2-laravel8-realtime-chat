@@ -16,13 +16,13 @@
 ## Run
 
 - access on browser: `http://localhost`
-![demo](screenshot\demo.png)
+![demo](screenshot/demo.png)
 
 ## MVC
 
 - `php artisan make:model ChatRoom/ChatMessage -m`
 - `php artisan migrate`
-![demo](screenshot\db.png)
+![db](screenshot/db.png)
 - `php artisan make:seeder ChatRoomSeeder`
 - `php artisan db:seed`
 - `php artisan make:controller ChatController`
@@ -35,4 +35,4 @@
 >clear cache
 - `php artisan optimize`
 - `php artisan queue:work`
-![demo](screenshot\pusher.png)
+![pusher](screenshot/pusher.png)
