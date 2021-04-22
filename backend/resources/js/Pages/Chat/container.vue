@@ -1,7 +1,14 @@
 <template>
   <app-layout>
     <template #header>
-      <h2 class="font-semibold text-xl text-gray-800 leading-tight">Chat</h2>
+      <h2 class="font-semibold text-xl text-gray-800 leading-tight">
+        <chat-room-selection
+          v-if="v_currentRoom.id"
+          :prop_chatRooms="v_chatRooms"
+          :prop_currentRoom="v_currentRoom"
+          v-on:emitRoomChanged="onSetRoom($event)"
+        />
+      </h2>
     </template>
 
     <div class="py-12">
@@ -22,12 +29,14 @@
 import AppLayout from "@/Layouts/AppLayout";
 import InputMessage from "./inputMessage.vue";
 import MessageContainer from "./messageContainer.vue";
+import ChatRoomSelection from "./chatRoomSelection.vue";
 
 export default {
   components: {
     AppLayout,
     InputMessage,
     MessageContainer,
+    ChatRoomSelection,
   },
   data() {
     return {
