@@ -14,9 +14,15 @@ class EventServiceProvider extends ServiceProvider
      *
      * @var array
      */
+    // `php artisan event:generate` se tao ra:
+    // 1/ backend/app/Events/NewChatMessage.php
+    // 2/ backend/app/Listeners/SendChatMessageNotification.php
     protected $listen = [
         Registered::class => [
             SendEmailVerificationNotification::class,
+        ],
+        'App\Events\NewChatMessage' => [
+            'App\Listeners\SendChatMessageNotification'
         ],
     ];
 

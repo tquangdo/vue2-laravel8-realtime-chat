@@ -45,7 +45,34 @@ export default {
       v_messages: [],
     };
   },
+  watch: {
+    v_currentRoom(arg_val, arg_old_val) {
+      if (arg_old_val.id) {
+        this.onDisconnect(arg_old_val);
+      }
+      this.onConnect();
+    },
+  },
   methods: {
+    onConnect() {
+      if (this.v_currentRoom.id) {
+        let vm = this;
+        console.log("~~~~ 1 @@@@@@@@@@");
+        this.onGetMessages();
+        console.log("~~~~ 2 @@@@@@@@@@");
+        window.Echo.private("chat." + this.v_currentRoom.id).listen(
+          ".message.new",
+          (e) => {
+            console.log("~~~~ 3 @@@@@@@@@@");
+            vm.onGetMessages();
+            console.log("~~~~ 4 @@@@@@@@@@");
+          }
+        );
+      }
+    },
+    onDisconnect(arg_room) {
+      window.Echo.leave("chat." + arg_room.id);
+    },
     onGetRooms() {
       axios
         .get("/chat/rooms")
@@ -59,7 +86,6 @@ export default {
     },
     onSetRoom(arg_room) {
       this.v_currentRoom = arg_room;
-      this.onGetMessages();
     },
     onGetMessages() {
       axios
