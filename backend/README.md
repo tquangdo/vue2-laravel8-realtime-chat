@@ -2,6 +2,7 @@
 
 ## Install
 
+- copy `.env.example` to `.env`
 - `docker-compose exec app bash`
 - `composer require laravel/sanctum`
 - `php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"`
@@ -27,12 +28,21 @@
 - `php artisan db:seed`
 - `php artisan make:controller ChatController`
 
-## Pusher
-
+## Pusher (login by github "trangia61@")
+### api key
+- setting these `.env`:
+```shell
+PUSHER_APP_ID=
+PUSHER_APP_KEY=
+PUSHER_APP_SECRET=
+PUSHER_APP_CLUSTER=mt1
+```
+![api_key](screenshot/api_key.png)
+### install & user
 - `composer require pusher/pusher-php-server "~4.0"`
 - `backend % npm i --save laravel-echo pusher-js`
 - `php artisan event:generate`
 >clear cache
-- `php artisan optimize`
-- `php artisan queue:work`
+>- `php artisan optimize`
+>- `php artisan queue:work`
 ![pusher](screenshot/pusher.png)
