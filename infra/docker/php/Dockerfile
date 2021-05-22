@@ -26,6 +26,6 @@ RUN apt-get update && \
   composer config -g repos.packagist composer https://packagist.org
 
 # COPY ./infra/docker/php/php-fpm.d/zzz-www.conf /usr/local/etc/php-fpm.d/zzz-www.conf
-COPY ./infra/docker/php/php.ini /usr/local/etc/php/php.ini
+# COPY ./infra/docker/php/php.ini /usr/local/etc/php/php.ini
 
 WORKDIR /work/backend
