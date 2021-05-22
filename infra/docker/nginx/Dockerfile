@@ -15,9 +15,12 @@ COPY --from=node /usr/local/lib /usr/local/lib
 # yarn command
 COPY --from=node /opt /opt
 # nginx config file
-# COPY ./infra/docker/nginx/*.conf /etc/nginx/conf.d/
-COPY default.conf.template /etc/nginx/conf.d/default.conf.template
+## NORMAL!
+COPY default.conf /etc/nginx/conf.d/default.conf
+## HEROKU!
+# COPY default.conf.template /etc/nginx/conf.d/default.conf.template
 
 WORKDIR /work/backend
 
-CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
+## HEROKU!
+# CMD /bin/bash -c "envsubst '\$PORT' < /etc/nginx/conf.d/default.conf.template > /etc/nginx/conf.d/default.conf" && nginx -g 'daemon off;'
