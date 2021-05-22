@@ -8,6 +8,7 @@
 - `php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"`
 - `composer require laravel/jetstream`
 - `php artisan jetstream:install inertia`
+- `php artisan key:generate`
 - `php artisan migrate`
 - `cd backend`
 - `backend % npm i`
