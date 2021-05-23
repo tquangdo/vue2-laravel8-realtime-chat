@@ -6,8 +6,8 @@ setup:
   #  .env vars
 build:
   docker:
-    app: ./infra/docker/php/Dockerfile
-    web: ./infra/docker/nginx/Dockerfile
+    app: infra/docker/php/Dockerfile
+    web: infra/docker/nginx/Dockerfile
   config:
     APP_NAME: Laravel
     APP_KEY: base64:80tS20+d8pgNh53Q6dk2UBKuUWRkdZar5d32humug08=
